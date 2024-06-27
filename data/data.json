@@ -1,0 +1,44 @@
+{
+  "project": [
+    {
+      "title": "Airbnb clone site",
+      "languages": "HTML, SCSS, JavaScript",
+      "description": "Airbnb 사이트를 클론코딩한 사이트",
+      "github": "https://github.com/hlk1m/airbnb_clone",
+      "url": "https://hlk1m.github.io/airbnb_clone/",
+      "img-path": "../assets/works/airbnb.jpg"
+    },
+    {
+      "title": "Miya clone site",
+      "languages": "HTML, CSS, JavaScript",
+      "description": "바닐라 JS를 사용한 쇼핑몰 상품 상세페이지",
+      "github": "https://github.com/hlk1m/mikiya_clone",
+      "url": "https://hlk1m.github.io/mikiya_clone/",
+      "img-path": "../assets/works/mi.jpg"
+    },
+    {
+      "title": "Ecommerce product page",
+      "languages": "HTML, CSS, JavaScript",
+      "description": "바닐라 JS를 사용한 쇼핑몰 상품 상세페이지",
+      "github": "https://github.com/hlk1m/Ecommerce-product-page",
+      "url": "https://hlk1m.github.io//Ecommerce-product-page/",
+      "img-path": "../assets/works/product.jpg"
+    },
+    {
+      "title": "World",
+      "languages": "HTML, CSS, React, TypeScript",
+      "description": "다크테마를 추가한 반응형 웹사이트.",
+      "github": "https://github.com/hlk1m/world",
+      "url": "https://hlk1m.github.io/world/",
+      "img-path": "../assets/works/world.jpg"
+    },
+    {
+      "title": "DS_Hospital",
+      "languages": "HTML, CSS, JavaScript",
+      "description": "반응형 웹페이지",
+      "github": "https://github.com/hlk1m/DS_Hospital",
+      "url": "https://hlk1m.github.io/DS_Hospital/",
+      "img-path": "../assets/works/.jpg"
+    }
+  ]
+}
