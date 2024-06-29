@@ -3,42 +3,42 @@
     {
       "title": "Airbnb clone site",
       "languages": "HTML, SCSS, JavaScript",
-      "description": "Airbnb 사이트를 클론코딩한 사이트",
+      "description": "Airbnb 사이트를 클론코딩한 웹 사이트입니다.\n 기존의 숙소 사진 대신 사진 사진 API를 사용하였으며, 다양한 기기에서 사용할 수 있는 반응형으로 구현하였습니다. \n자바스크립트를 사용하여 모바일에서 사용할 때 메뉴를 토글할 수 있는 버튼을 기능을 구현하였습니다.",
       "github": "https://github.com/hlk1m/airbnb_clone",
       "url": "https://hlk1m.github.io/airbnb_clone/",
-      "img-path": "../assets/works/airbnb.jpg"
+      "type": "airbnb"
     },
     {
       "title": "Miya clone site",
       "languages": "HTML, CSS, JavaScript",
-      "description": "바닐라 JS를 사용한 쇼핑몰 상품 상세페이지",
+      "description": "Miya clone site를 클론코딩한 웹 사이트입니다.\n 가구 이미지를 대신하여 사진 API를 사용하였으며, JavaScript와 CSS를 사용하여 사이트의 특징인 애니메이션을 중심으로 메인페이지의 텍스트 모션과 사이드 메뉴의 모션을 구현하였습니다.",
       "github": "https://github.com/hlk1m/mikiya_clone",
       "url": "https://hlk1m.github.io/mikiya_clone/",
-      "img-path": "../assets/works/mi.jpg"
+      "type": "mi"
     },
     {
       "title": "Ecommerce product page",
       "languages": "HTML, CSS, JavaScript",
-      "description": "바닐라 JS를 사용한 쇼핑몰 상품 상세페이지",
+      "description": "쇼핑몰 상품 상세페이지를 구현한 웹 사이트입니다. \n frontendmentor의 챌린지 디자인을 참고하여 작업하였으며, JavaScript를 사용하여 상세 이미지를 볼 수 있는 모달 페이지와 장바구니 추가 버튼 등을 구현하였습니다. ",
       "github": "https://github.com/hlk1m/Ecommerce-product-page",
       "url": "https://hlk1m.github.io//Ecommerce-product-page/",
-      "img-path": "../assets/works/product.jpg"
+      "type": "product"
     },
     {
       "title": "World",
       "languages": "HTML, CSS, React, TypeScript",
-      "description": "다크테마를 추가한 반응형 웹사이트.",
+      "description": "세계 각국의 국기와 정보를 알 수 있는 웹 사이트입니다. \n frontendmentor의 챌린지 디자인을 참고하여 작업하였으며, 나라 정보 API를 사용하여 각 나라의 정보를 받아오고, 필터 기능을 사용하여 지역와 검색을 통하여 원하는 나라를 찾을 수 있는 기능을 구현하였습니다.\n Styled-components를 사용하여 다크모드 기능을 추가하였으며, 반응형 웹페이지로 작업하였습니다.",
       "github": "https://github.com/hlk1m/world",
       "url": "https://hlk1m.github.io/world/",
-      "img-path": "../assets/works/world.jpg"
+      "type": "world"
     },
     {
       "title": "DS_Hospital",
       "languages": "HTML, CSS, JavaScript",
-      "description": "반응형 웹페이지",
+      "description": "병원의 정보가 담긴 웹 사이트입니다.\n 기존의 병원 사이트들을 참고하여 디자인하였으며, 반응형 웹사이트로 구현하였습니다.",
       "github": "https://github.com/hlk1m/DS_Hospital",
       "url": "https://hlk1m.github.io/DS_Hospital/",
-      "img-path": "../assets/works/.jpg"
+      "type": "ds"
     }
   ]
 }
