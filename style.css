@@ -1,3 +1,614 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
+}
 
+html {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: 0;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@font-face {
+  font-family: "MoveSans-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MoveSans-Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KyoboHandwriting2023wsa";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404-2@1.0/KyoboHandwriting2023wsa.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+#home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/assets/images/background.png");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 16px;
+  height: 100vh;
+  width: 100%;
+  padding: 2em;
+}
+
+.home_wrap {
+  border: 1px solid #000000;
+  width: 100%;
+  height: 80%;
+}
+
+.home_bg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/assets/images/full_line.png");
+  background-position: 47% center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+}
+.home_bg .alphabet {
+  width: 11%;
+}
+.home_bg::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("/assets/images/Long_text.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+.alpha_p {
+  position: absolute;
+  top: 27%;
+  left: 17%;
+  z-index: 100;
+}
+
+.alpha_o {
+  position: absolute;
+  top: 32%;
+  left: 25%;
+  z-index: 90;
+}
+
+.alpha_r {
+  position: absolute;
+  top: 27%;
+  left: 33%;
+  z-index: 80;
+}
+
+.alpha_t {
+  position: absolute;
+  top: 32%;
+  left: 38.5%;
+  z-index: 70;
+}
+
+.alpha_f {
+  position: absolute;
+  top: 27%;
+  left: 46%;
+  z-index: 60;
+}
+
+.alpha_o2 {
+  position: absolute;
+  top: 32%;
+  left: 53%;
+  z-index: 50;
+}
+
+.alpha_l {
+  position: absolute;
+  top: 27%;
+  left: 60%;
+  z-index: 40;
+}
+
+.alpha_i {
+  position: absolute;
+  top: 31%;
+  left: 64%;
+  z-index: 30;
+}
+
+.alpha_o3 {
+  position: absolute;
+  top: 33%;
+  left: 71%;
+  z-index: 20;
+}
+
+.b4 {
+  position: absolute;
+  top: 35%;
+  left: 29%;
+  z-index: initial;
+}
+
+.b5 {
+  position: absolute;
+  top: 35%;
+  left: 31.5%;
+  z-index: initial;
+}
+
+.b6 {
+  position: absolute;
+  top: 77%;
+  left: 28%;
+  z-index: initial;
+}
+
+.b1 {
+  position: absolute;
+  top: 27%;
+  left: 75%;
+  z-index: initial;
+}
+
+.b3 {
+  position: absolute;
+  top: 33%;
+  left: 78%;
+  z-index: initial;
+}
+
+.b2 {
+  position: absolute;
+  top: 73%;
+  left: 70%;
+  z-index: initial;
+}
+
+.home_content {
+  padding-top: 1.2em;
+  display: flex;
+  width: 100%;
+  height: 20%;
+}
+
+.home_occupation {
+  width: auto;
+  font-size: 3.7em;
+  font-family: "MoveSans-Bold";
+}
+.home_occupation small {
+  font-family: "MoveSans-Light";
+  font-size: 0.7em;
+}
+
+.home_line {
+  flex: 1;
+  border-bottom: 1px solid #000000;
+  height: 60%;
+  position: relative;
+}
+.home_line span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 4em;
+  font-family: "MoveSans-Bold";
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 6vh;
+  padding: 0 5%;
+  width: 100%;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+#navbar .hidden {
+  display: none;
+}
+
+.navbar_logo img {
+  width: 70px;
+}
+
+.navbar_menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.navbar_menu_item {
+  cursor: pointer;
+  font-family: "MoveSans-Light";
+  transition: color 0.3s ease;
+}
+.navbar_menu_item:hover {
+  color: #b0b0b0;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+#sentence {
+  width: 100%;
+  height: 100vh;
+  margin-top: 10vh;
+  font-size: 16px;
+}
+
+.sentence_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/assets/images/cloud_green.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 80%;
+}
+
+.sentence_title {
+  margin-bottom: 1.2em;
+  font-family: "KyoboHandwriting2023wsa";
+  font-size: 3em;
+  font-weight: normal;
+  color: transparent;
+  white-space: nowrap;
+  position: relative;
+}
+.sentence_title::before {
+  content: "안녕하세요. 저는 열정적인 디자이너 김해린입니다.   ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  overflow: hidden;
+  border-right: 1px solid black;
+  animation: typing 5s steps(28);
+}
+
+.sentence_description {
+  line-height: 1.7;
+  font-size: 1.1em;
+  word-break: keep-all;
+  width: 40%;
+  min-width: 750px;
+}
+
+#about {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  padding: 7vh 5%;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#about h1 {
+  font-family: "MoveSans-Bold";
+  font-size: 2.4em;
+  color: #006fc4;
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 50%;
+  min-width: 900px;
+  margin-top: 3em;
+  gap: 2em;
+}
+
+.about_list {
+  border-radius: 0.3em;
+  padding: 1.2em;
+  border: 1px dashed #b0b0b0;
+}
+.about_list h3 {
+  display: inline-block;
+  padding-right: 0.7em;
+  margin-bottom: 0.7em;
+  font-family: "Noto Sans KR", sans-serif;
+  border-bottom: 3px solid #006fc4;
+}
+
+.about_content {
+  margin-left: 2em;
+}
+
+.about_data {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 0.7em;
+}
+.about_data span {
+  font-weight: 700;
+}
+.about_data p {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.about_academy {
+  margin-bottom: 0.7em;
+}
+
+.about_academy_description {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+}
+
+.about_academy_data {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.about_academy_data span {
+  text-align: end;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.about_academy_data p {
+  font-weight: 700;
+}
+
+.about_skill {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2em;
+}
+
+.skill_list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.skill_list i {
+  font-size: 3em;
+}
+.skill_list img {
+  width: 45px;
+}
+.skill_list span {
+  font-size: 0.85em;
+}
+
+#work {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  padding: 7vh 5%;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: initial;
+  flex-direction: column;
+  align-items: center;
+}
+#work h1 {
+  font-family: "MoveSans-Bold";
+  font-size: 2.4em;
+  color: #006fc4;
+}
+#work h1 {
+  margin-top: 2.5vh;
+}
+
+.work_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+}
+
+.work_btn {
+  font-size: 2.4em;
+  margin: 0 1.2em;
+  color: #b0b0b0;
+  transition: color 0.3s ease;
+}
+.work_btn:hover {
+  color: #717171;
+}
+
+.work_card {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: initial;
+  -webkit-box-shadow: 0px 9px 14px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 9px 14px 2px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  gap: 2em;
+  margin-top: 2em;
+  border-radius: 0.7em;
+}
+.work_card article {
+  margin: auto;
+  width: 65%;
+}
+.work_card article img {
+  width: 100%;
+}
+
+.card_content {
+  width: 35%;
+  margin-right: 4em;
+  margin-top: 17%;
+}
+.card_content h5 {
+  font-size: 1.5em;
+  margin-bottom: 1.2em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid #006fc4;
+}
+
+.card_list {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-bottom: 0.7em;
+}
+.card_list span {
+  font-weight: 700;
+}
+
+.card_links {
+  margin-bottom: 0.7em;
+  margin-left: 30%;
+  padding: 0.7em 0;
+}
+
+.card_link_btn, .go_top_btn {
+  font-size: 0.85em;
+  padding: 2px 0.7em;
+  margin-right: 0.4em;
+  font-weight: 700;
+  border: 1px solid #006fc4;
+  border-right: 3px solid #006fc4;
+  border-bottom: 3px solid #006fc4;
+  border-radius: 0.4em;
+  transition: border 0.15s linear, background-color 0.15s linear;
+}
+.card_link_btn:hover, .go_top_btn:hover {
+  border: 1px solid #006fc4;
+  border-left: 3px solid #006fc4;
+  border-top: 3px solid #006fc4;
+  background-color: #ebebeb;
+}
+
+.card_more {
+  margin-left: 30%;
+  font-size: 1em;
+  color: #717171;
+}
+
+.card_description {
+  padding: 1.2em;
+  border: 1px solid #ebebeb;
+  background-color: #eeeeee;
+  border-radius: 0.3em;
+  word-break: keep-all;
+  margin-top: 1.2em;
+}
+
+.go_top_btn {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  color: #006fc4;
+  border-radius: 50%;
+  padding: 0;
+}
+
+#contact {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  padding: 7vh 5%;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 15vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), #fbc8d4);
+}
+#contact h1 {
+  font-family: "MoveSans-Bold";
+  font-size: 2.4em;
+  color: #006fc4;
+}
+
+body {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
 
 /*# sourceMappingURL=style.css.map */

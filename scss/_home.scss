@@ -1,0 +1,136 @@
+@use "common" as co;
+
+@mixin absolute($top, $left, $zIndex: initial) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: $zIndex;
+}
+
+#home {
+  @include co.flexBox;
+  @include co.bgImg("background");
+  font-size: 16px;
+  height: 100vh;
+  width: 100%;
+  padding: co.$margin-middle;
+}
+
+.home_wrap {
+  border: co.$border;
+  width: 100%;
+  height: 80%;
+}
+
+.home_bg {
+  @include co.flexBox;
+  @include co.bgImg("full_line", 47% center, 50%);
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+
+  .alphabet {
+    width: 11%;
+  }
+
+  // Long text image
+  &::before {
+    @include absolute(0, 0, -1);
+    @include co.bgImg("Long_text", center, 50%);
+
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Alphabet
+.alpha_p {
+  @include absolute(27%, 17%, 100);
+}
+.alpha_o {
+  @include absolute(32%, 25%, 90);
+}
+.alpha_r {
+  @include absolute(27%, 33%, 80);
+}
+.alpha_t {
+  @include absolute(32%, 38.5%, 70);
+}
+.alpha_f {
+  @include absolute(27%, 46%, 60);
+}
+.alpha_o2 {
+  @include absolute(32%, 53%, 50);
+}
+.alpha_l {
+  @include absolute(27%, 60%, 40);
+}
+.alpha_i {
+  @include absolute(31%, 64%, 30);
+}
+.alpha_o3 {
+  @include absolute(33%, 71%, 20);
+}
+
+// bubbles
+// - left
+.b4 {
+  @include absolute(35%, 29%);
+}
+.b5 {
+  @include absolute(35%, 31.5%);
+}
+.b6 {
+  @include absolute(77%, 28%);
+}
+
+// - right
+.b1 {
+  @include absolute(27%, 75%);
+}
+.b3 {
+  @include absolute(33%, 78%);
+}
+.b2 {
+  @include absolute(73%, 70%);
+}
+
+.home_content {
+  padding-top: co.$margin-regular;
+
+  display: flex;
+  width: 100%;
+  height: 20%;
+}
+
+.home_occupation {
+  width: auto;
+  font-size: 3.7em;
+  font-family: co.$font-eng-bold;
+
+  small {
+    font-family: co.$font-eng-light;
+    font-size: 0.7em;
+  }
+}
+.home_line {
+  flex: 1;
+  border-bottom: co.$border;
+  height: 60%;
+  position: relative;
+
+  span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 4em;
+    font-family: co.$font-eng-bold;
+  }
+}
+
+// Laptop
+@media screen and (max-width: co.$laptop) {
+}

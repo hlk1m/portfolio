@@ -37,20 +37,24 @@
   </head>
   <body>
     <!-- Home -->
-    <section id="Home">
+    <section id="home">
       <div class="home_wrap">
         <div class="home_bg">
-          <!-- <img src="assets/images/full_line.png" alt="background image" /> -->
-          <!-- ::after <img src="assets/images/Long_text.png" alt="background image" /> -->
-          <img class="img_p" src="assets/images/P.png" alt="P" />
-          <img class="img_o" src="assets/images/O.png" alt="O" />
-          <img class="img_r" src="assets/images/R.png" alt="R" />
-          <img class="img_t" src="assets/images/T.png" alt="T" />
-          <img class="img_f" src="assets/images/F.png" alt="F" />
-          <img class="img_o2" src="assets/images/O.png" alt="O" />
-          <img class="img_l" src="assets/images/L.png" alt="L" />
-          <img class="img_i" src="assets/images/I.png" alt="I" />
-          <img class="img_o3" src="assets/images/O.png" alt="O" />
+          <img class="alphabet alpha_p" src="assets/images/P.png" alt="P" />
+          <img class="alphabet alpha_o" src="assets/images/O.png" alt="O" />
+          <img class="alphabet alpha_r" src="assets/images/R.png" alt="R" />
+          <img class="alphabet alpha_t" src="assets/images/T.png" alt="T" />
+          <img class="alphabet alpha_f" src="assets/images/F.png" alt="F" />
+          <img class="alphabet alpha_o2" src="assets/images/O.png" alt="O" />
+          <img class="alphabet alpha_l" src="assets/images/L.png" alt="L" />
+          <img class="alphabet alpha_i" src="assets/images/I.png" alt="I" />
+          <img class="alphabet alpha_o3" src="assets/images/O.png" alt="O" />
+          <img class="bubble b1" src="assets/images/Small.png" alt="bubble" />
+          <img class="bubble b2" src="assets/images/Small.png" alt="bubble" />
+          <img class="bubble b3" src="assets/images/Small_2.png" alt="bubble" />
+          <img class="bubble b4" src="assets/images/Small_2.png" alt="bubble" />
+          <img class="bubble b5" src="assets/images/Small_2.png" alt="bubble" />
+          <img class="bubble b6" src="assets/images/Small_3.png" alt="bubble" />
         </div>
       </div>
       <div class="home_content">
@@ -69,10 +73,9 @@
       <a class="navbar_logo" href="#">
         <img src="assets/logo_text.png" alt="logo" />
       </a>
-      <ul class="navbar_menu hidden">
+      <ul class="navbar_menu">
         <li class="navbar_menu_item active" data-link="#home">Home</li>
         <li class="navbar_menu_item" data-link="#about">About</li>
-        <li class="navbar_menu_item" data-link="#skills">Skills</li>
         <li class="navbar_menu_item" data-link="#work">My work</li>
         <li class="navbar_menu_item" data-link="#contact">Contact</li>
       </ul>
@@ -81,25 +84,24 @@
         <i class="fas fa-bars"></i>
       </button>
     </nav>
+
     <!-- Sentence -->
     <section id="sentence">
       <div class="sentence_container">
         <h1 class="sentence_title">
-          안녕하세요. 저는 열정적인 디자이너 <b>김해린</b>입니다.
+          안녕하세요. 저는 열정적인 디자이너 김해린입니다.
         </h1>
         <p class="sentence_description">
-          저는 좋아하는 일을 할 때 더 좋은 결과를 낼 수 있다고 믿습니다.
+          &nbsp;저는 좋아하는 일을 할 때 더 좋은 결과를 낼 수 있다고 믿습니다.
           <br />시각적으로 아름답고 기능적으로 뛰어난 디자인을 만들고 구현하는
           것을 목표로 하고 있습니다. <br />읽고 쓰기 쉬우며 유지보수가 용이한
           마크업과 웹 접근성 및 웹 표준을 고려한 코드를 작성하기 위해 노력하고
-          있습니다.<br />
-          최근에는 SCSS와 styled-components와 같은 CSS 프레임워크를 공부하고
-          있습니다.<br /><br />
-          또한, JavaScript와 함께 React, TypeScript 등 다양한 프레임워크
-          환경에서 <br />컴포넌트 단위의 마크업 작업을 능숙하게 수행할 수 있도록
+          있습니다. 최근에는 SCSS와 styled-components와 같은 CSS 프레임워크를
+          공부하고 있습니다.<br /><br />
+          &nbsp;또한, JavaScript와 함께 React, TypeScript 등 다양한 프레임워크
+          환경에서 컴포넌트 단위의 마크업 작업을 능숙하게 수행할 수 있도록
           노력하고 있습니다.
         </p>
-        <button class="sentence_contact">Contact Me</button>
       </div>
     </section>
 
@@ -147,48 +149,76 @@
           </div>
         </li>
         <li class="about_list">
-          <h3>교육</h3>
-          <div class="about_content">
-            <div class="about_academy">
-              <span>학원이름</span>
-              <p>010-</p>
-            </div>
-          </div>
-        </li>
-        <li class="about_list">
           <h3>자격증</h3>
           <div class="about_content">
             <div class="about_data">
               <span>포토샵</span>
-              <p>GTQ 1급 | 2020.05</p>
+              <p>GTQ 1급 | 2020.06</p>
             </div>
             <div class="about_data">
               <span>일러스트레이터</span>
-              <p>GTQi 1급 | 2020.05</p>
+              <p>GTQi 1급 | 2020.06</p>
             </div>
           </div>
         </li>
         <li class="about_list">
+          <h3>교육</h3>
+          <div class="about_content">
+            <div class="about_academy">
+              <div class="about_academy_data">
+                <p>비개발자를 위한, 웹개발 종합반</p>
+                <span>2021.12</span>
+              </div>
+              <p class="about_academy_description">
+                웹개발의 기초(웹, HTML, CSS)와 자바스크립트를 사용하여 동적인
+                웹페이지를 제작하고, 배포하는 것을 목표로 하였다.
+              </p>
+            </div>
+            <div class="about_academy">
+              <div class="about_academy_data">
+                <p>영상편집 & 모션그래픽제작</p>
+                <span>2020.09</span>
+              </div>
+              <p class="about_academy_description">
+                포토샵과 일러스트레이터, 프리미어를 활용하여 디자인과 영상편집,
+                모션그래픽제작에 대한 전반적인 내용을 학습하였습니다.
+              </p>
+            </div>
+            <div class="about_academy">
+              <div class="about_academy_data">
+                <p>디지털디자인향상과정 (웹표준 및 웹접근성)</p>
+                <span>2017.01</span>
+              </div>
+              <p class="about_academy_description">
+                프로토타입 제작을 바탕으로 한 정보구조 및 설계를 통해 사용성과
+                매체의 특성을 반영하여 심미적으로 디자인하는 능력을 함양할 수
+                있다.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="about_list">
           <h3>스킬</h3>
           <ul class="about_skill">
             <li class="skill_list">
-              <i class="fa-brands fa-html5"></i>
+              <i class="fa-brands fa-html5" style="color: #e34f26"></i>
               <span>HTML</span>
             </li>
             <li class="skill_list">
-              <i class="fa-brands fa-css3-alt"></i>
+              <i class="fa-brands fa-css3-alt" style="color: #1572b6"></i>
               <span>CSS</span>
             </li>
             <li class="skill_list">
-              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-js" style="color: #f7df1e"></i>
               <span>JavaScript</span>
             </li>
             <li class="skill_list">
-              <i class="fa-brands fa-sass"></i>
-              <span>SCSS</span>
+              <i class="fa-brands fa-sass" style="color: #cc6699"></i>
+              <span>SCSS/SASS</span>
             </li>
             <li class="skill_list">
-              <i class="fa-brands fa-react"></i>
+              <i class="fa-brands fa-react" style="color: #61dafb"></i>
               <span>React</span>
             </li>
             <li class="skill_list">
@@ -206,7 +236,7 @@
               <span>Illustrator</span>
             </li>
             <li class="skill_list">
-              <i class="fa-brands fa-figma"></i>
+              <i class="fa-brands fa-figma" style="color: #f24e1e"></i>
               <span>Figma</span>
             </li>
           </ul>
@@ -216,7 +246,7 @@
 
     <!-- Work -->
     <section id="work">
-      <h3>Projects</h3>
+      <h1>Projects</h1>
       <div class="work_container">
         <button class="work_btn left_btn">
           <i class="fa-solid fa-chevron-left"></i>
@@ -224,15 +254,41 @@
         <div class="work_card">
           <article>
             <img
-              src="images/work/product_m.png"
+              src="assets/works/airbnb_m.jpg"
               alt="work thumbnail"
               class="card_img"
             />
           </article>
           <div class="card_content">
             <h5>전자상거래 페이지</h5>
-            <span>개인 프로젝트 | HTML, CSS, JS</span>
-            <p>쇼핑몰의 상품 상세페이지를 구현한 페이지로...</p>
+            <div class="card_list">
+              <span>Tool</span>
+              <p>HTML, CSS, JS</p>
+            </div>
+            <div class="card_list">
+              <span>참여도</span>
+              <p>개인 프로젝트</p>
+            </div>
+            <div class="card_list">
+              <span>주요 기능</span>
+              <p>반응형 웹, 장바구니 추가 및 제거, 이미지 자세히보기</p>
+            </div>
+            <div class="card_links">
+              <a href="#" class="card_link_btn">웹사이트</a>
+              <a href="#" class="card_link_btn">Github</a>
+            </div>
+            <button class="card_more">
+              상세 설명 더보기 <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <p class="card_description hidden">
+              세계 각국의 국기와 정보를 알 수 있는 웹 사이트입니다. <br />
+              frontendmentor의 챌린지 디자인을 참고하여 작업하였으며, 나라 정보
+              API를 사용하여 각 나라의 정보를 받아오고, 필터 기능을 사용하여
+              지역와 검색을 통하여 원하는 나라를 찾을 수 있는 기능을
+              구현하였습니다.<br /><br />
+              Styled-components를 사용하여 다크모드 기능을 추가하였으며, 반응형
+              웹페이지로 작업하였습니다.
+            </p>
           </div>
         </div>
         <button class="work_btn right_btn">
@@ -244,13 +300,13 @@
     <!-- Contact -->
     <footer id="contact">
       <h1 class="contact_title">Contact</h1>
-      <p class="contact_email">khlin0612@gmail.com</p>
+      <div><i class="fa-solid fa-envelope"></i> khlin0612@gmail.com</div>
+      <div><i class="fa-solid fa-phone"></i> 010-7228-5126</div>
       <div class="contact_links">
         <a href="https://github.com/hlk1m" target="_blank">
           <i class="fab fa-github"></i>
         </a>
       </div>
-      <p class="contact_rights">2024 HLK</p>
     </footer>
 
     <!-- Arrow up -->

@@ -1,0 +1,87 @@
+@use "common" as co;
+
+#about {
+  @include co.section;
+  @include co.flexBox;
+}
+
+.about_container {
+  @include co.grid;
+  width: 50%;
+  min-width: 900px;
+  margin-top: co.$margin-large;
+  gap: co.$margin-middle;
+}
+
+.about_list {
+  border-radius: co.$border-radius-small;
+  padding: co.$margin-regular;
+
+  border: 1px dashed co.$color-gray;
+
+  h3 {
+    display: inline-block;
+    padding-right: co.$margin-small;
+    margin-bottom: co.$margin-small;
+    font-family: co.$font-kor;
+    border-bottom: 3px solid co.$color-blue;
+  }
+}
+
+.about_content {
+  margin-left: co.$margin-middle;
+}
+
+.about_data {
+  @include co.grid;
+
+  margin-bottom: co.$margin-small;
+
+  span {
+    font-weight: co.$font-weight-bold;
+  }
+  p {
+    font-family: co.$font-kor;
+  }
+}
+
+// About Academy
+.about_academy {
+  margin-bottom: co.$margin-small;
+}
+.about_academy_description {
+  margin-top: co.$margin-micro;
+  font-size: co.$font-small;
+}
+.about_academy_data {
+  @include co.grid(70% 30%);
+
+  span {
+    text-align: end;
+    font-family: co.$font-kor;
+  }
+  p {
+    font-weight: co.$font-weight-bold;
+  }
+}
+
+// Skills
+.about_skill {
+  @include co.grid(repeat(4, 1fr));
+  gap: co.$margin-regular;
+}
+
+.skill_list {
+  @include co.flexBox;
+  i {
+    font-size: 3em;
+  }
+
+  img {
+    width: 45px;
+  }
+
+  span {
+    font-size: co.$font-small;
+  }
+}

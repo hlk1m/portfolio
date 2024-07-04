@@ -1,4 +1,12 @@
 @use "_reset";
+@use "_home";
 @use "_header";
-@use "_main";
-@use "_footer";
+@use "_sentence";
+@use "_about";
+@use "_work";
+@use "_contact";
+
+// Background color
+body {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}

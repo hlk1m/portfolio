@@ -10,35 +10,39 @@ $color-blue: #006fc4;
 $shadow: 0px 0px 9px 4px rgba(0, 0, 0, 0.07);
 
 // Margin
-$margin-micro: 0.35em;
-$margin-small: 0.5em;
-$margin-middle: 0.7em;
-$margin-default: 1em;
-$margin-large: 1.4em;
-$margin-xlarge: 2em;
+$margin-micro: 0.4em;
+$margin-small: 0.7em;
+$margin-regular: 1.2em;
+$margin-middle: 2em;
+$margin-large: 3em;
+$margin-xlarge: 4em;
 
 // Font
-$font-small: 0.7em;
-$font-middle: 1em;
-$font-large: 1.4em;
+$font-small: 0.85em;
+$font-middle: 1.5em;
+$font-large: 2.4em;
 
-$font-eng: "MoveSans-Bold";
+$font-eng-bold: "MoveSans-Bold";
+$font-eng-light: "MoveSans-Light";
 $font-kor: "Noto Sans KR", sans-serif;
+$font-kor-title: "KyoboHandwriting2023wsa";
 
 $font-weight-light: 300;
 $font-weight-nomal: 400;
 $font-weight-bold: 700;
 
 // Border
-$border: 1px solid #dddddd;
+$border: 1px solid #000000;
+$border-blue: solid #006fc4;
 
 // Border radius
+$border-radius-small: 0.3em;
 $border-radius-button: 10px;
 $border-radius-card: 15px;
-$border-radius-circle: 50%;
 
 // Transition
 $transition: 0.3s ease;
+$transition-btn: 0.15s linear;
 
 // Screen Size
 $laptop: 1512px;
@@ -46,17 +50,9 @@ $tablet: 1024px;
 $tablet-s: 768px;
 $mobile: 430px;
 
-// mixin
-@mixin wrapper {
-  width: 100%;
-  padding: 3em 5%;
-  margin-bottom: 5em;
-}
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// All
+.hidden {
+  display: none;
 }
 
 // Font
@@ -64,6 +60,60 @@ $mobile: 430px;
   font-family: "MoveSans-Bold";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Bold.woff2")
     format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MoveSans-Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/MoveSans-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KyoboHandwriting2023wsa";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404-2@1.0/KyoboHandwriting2023wsa.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
+}
+
+// mixin
+@mixin section {
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  padding: 7vh 5%;
+  margin-bottom: 5em;
+
+  h1 {
+    font-family: $font-eng-bold;
+    font-size: $font-large;
+    color: $color-blue;
+  }
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 0px 9px 14px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 9px 14px 2px rgba(0, 0, 0, 0.07);
+}
+
+@mixin flexBox($justify: center, $direction: column, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $direction;
+  align-items: $align;
+}
+
+@mixin bgImg($url, $position: initial, $size: cover) {
+  background-image: url("/assets/images/" + $url + ".png");
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+@mixin grid($grid: 50% 50%) {
+  display: grid;
+  grid-template-columns: $grid;
 }

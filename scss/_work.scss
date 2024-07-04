@@ -1,0 +1,109 @@
+@use "common" as co;
+
+#work {
+  @include co.section;
+  @include co.flexBox(initial);
+
+  h1 {
+    margin-top: 2.5vh;
+  }
+}
+
+.work_container {
+  @include co.flexBox(space-between, row);
+
+  height: 100%;
+  width: 90%;
+}
+.work_btn {
+  font-size: co.$font-large;
+  margin: 0 co.$margin-regular;
+  color: co.$color-gray;
+  transition: color co.$transition;
+
+  &:hover {
+    color: co.$color-dark-gray;
+  }
+}
+
+.work_card {
+  @include co.flexBox($align: initial, $direction: row);
+  @include co.boxShadow;
+
+  width: 100%;
+  background-color: co.$color-white;
+  height: 100%;
+  gap: co.$margin-middle;
+  margin-top: co.$margin-middle;
+  border-radius: co.$margin-small;
+
+  article {
+    margin: auto;
+    width: 65%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.card_content {
+  width: 35%;
+  margin-right: co.$margin-xlarge;
+  margin-top: 17%;
+  h5 {
+    font-size: co.$font-middle;
+    margin-bottom: co.$margin-regular;
+    padding-bottom: co.$margin-micro;
+    border-bottom: 2px co.$border-blue;
+  }
+}
+.card_list {
+  @include co.grid(30% 70%);
+  margin-bottom: co.$margin-small;
+
+  span {
+    font-weight: co.$font-weight-bold;
+  }
+}
+
+.card_links {
+  margin-bottom: co.$margin-small;
+  margin-left: 30%;
+  padding: co.$margin-small 0;
+}
+
+.card_link_btn {
+  font-size: co.$font-small;
+  padding: 2px co.$margin-small;
+  margin-right: co.$margin-micro;
+  font-weight: co.$font-weight-bold;
+
+  border: 1px co.$border-blue;
+  border-right: 3px co.$border-blue;
+  border-bottom: 3px co.$border-blue;
+  border-radius: 0.4em;
+
+  transition: border co.$transition-btn, background-color co.$transition-btn;
+
+  &:hover {
+    border: 1px co.$border-blue;
+    border-left: 3px co.$border-blue;
+    border-top: 3px co.$border-blue;
+    background-color: co.$color-light-gray;
+  }
+}
+
+.card_more {
+  margin-left: 30%;
+  font-size: 1em;
+  color: co.$color-dark-gray;
+}
+
+.card_description {
+  padding: co.$margin-regular;
+  border: 1px solid co.$color-light-gray;
+  background-color: #eeeeee;
+  border-radius: co.$border-radius-small;
+  word-break: keep-all;
+  margin-top: co.$margin-regular;
+}

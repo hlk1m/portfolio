@@ -1,1 +1,40 @@
 @use "common" as co;
+
+#navbar {
+  @include co.flexBox(space-between, row);
+  // @include co.boxShadow;
+  height: 6vh;
+  padding: 0 5%;
+  width: 100%;
+  background-color: co.$color-white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid co.$color-light-gray;
+
+  .hidden {
+    display: none;
+  }
+}
+
+.navbar_logo {
+  img {
+    width: 70px;
+  }
+}
+
+.navbar_menu {
+  @include co.flexBox($direction: row);
+
+  gap: co.$margin-regular;
+}
+
+.navbar_menu_item {
+  cursor: pointer;
+  font-family: co.$font-eng-light;
+  transition: color co.$transition;
+
+  &:hover {
+    color: co.$color-gray;
+  }
+}
