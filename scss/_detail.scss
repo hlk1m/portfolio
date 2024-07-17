@@ -1,0 +1,85 @@
+@use "common" as co;
+@use "animation";
+
+// Card Detail Overlay Page
+.detail {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: co.$color-white;
+  width: 95%;
+  height: 95vh;
+  z-index: 1000;
+  padding: 5%;
+  overflow-y: scroll;
+  box-shadow: co.$shadow;
+
+  animation: AScaleOpacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.detail_title {
+  padding-bottom: 3px;
+  color: co.$color-blue;
+  font-family: co.$font-eng-bold;
+}
+
+.detail_heading {
+  @include co.flexBox($direction: row, $justify: space-between);
+  border-bottom: 1px co.$color-gray solid;
+
+  .detail_close_btn {
+    i {
+      color: co.$color-dark-gray;
+      font-size: co.$font-large;
+      transition: co.$transition;
+    }
+    i:hover {
+      color: co.$color-black;
+    }
+  }
+}
+
+.detail_list {
+  @include co.flexBox(initial, row, initial);
+
+  // background-color: powderblue;
+  margin-top: co.$margin-regular;
+  padding-left: co.$margin-middle;
+
+  span {
+    width: 150px;
+    font-size: 1.1em;
+    font-weight: co.$font-weight-bold;
+    border-right: 1px solid co.$color-gray;
+    margin-right: co.$margin-regular;
+  }
+  a {
+    margin-right: co.$margin-regular;
+  }
+}
+.detail_description {
+  margin: co.$margin-xlarge 0;
+  white-space: pre-line;
+  font-size: 1.1em;
+
+  p {
+    margin-top: co.$margin-small;
+    padding: 0 co.$margin-middle;
+  }
+}
+
+.detail_img {
+  h2 {
+    margin-bottom: co.$margin-regular;
+  }
+
+  img {
+    margin-bottom: co.$margin-regular;
+  }
+}

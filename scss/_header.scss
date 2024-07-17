@@ -1,4 +1,5 @@
 @use "common" as co;
+@use "animation";
 
 #navbar {
   @include co.flexBox(space-between, row);
@@ -11,9 +12,12 @@
   top: 0;
   left: 0;
   border-bottom: 1px solid co.$color-light-gray;
+  z-index: 10000;
 
-  .hidden {
-    display: none;
+  opacity: 0;
+
+  &.animation {
+    animation: AOpacity 2s ease-in-out forwards;
   }
 }
 

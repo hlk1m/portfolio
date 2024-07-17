@@ -1,10 +1,10 @@
 @use "common" as co;
+@use "animation";
 @use "work";
 
 // Top button
 
 .go_top_btn {
-  // position: absolute;
   @extend .card_link_btn;
 
   position: fixed;
@@ -13,6 +13,7 @@
   font-size: 22px;
   width: 40px;
   height: 40px;
+  background-color: co.$color-light-gray;
   color: co.$color-blue;
   border-radius: 50%;
 
@@ -23,8 +24,13 @@
 #contact {
   @include co.section;
   @include co.flexBox;
+
   height: 15vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(rgba(000, 000, 000, 000), #fbc8d4);
+  background: linear-gradient(rgba(000, 000, 000, 000), #c3cfe2);
+
+  &.animation {
+    animation: AExpand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
 }

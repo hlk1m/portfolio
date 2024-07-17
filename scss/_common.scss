@@ -40,6 +40,10 @@ $border-radius-small: 0.3em;
 $border-radius-button: 10px;
 $border-radius-card: 15px;
 
+// Animation
+$animation-opacity: cubic-bezier(0.39, 0.575, 0.565, 1);
+$animation-opacity-card: 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+
 // Transition
 $transition: 0.3s ease;
 $transition-btn: 0.15s linear;
@@ -116,4 +120,11 @@ $mobile: 430px;
 @mixin grid($grid: 50% 50%) {
   display: grid;
   grid-template-columns: $grid;
+}
+
+@mixin absolute($top, $left, $zIndex: initial) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: $zIndex;
 }

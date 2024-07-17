@@ -1,10 +1,12 @@
 @use "common" as co;
+@use "animation";
 
-@mixin absolute($top, $left, $zIndex: initial) {
+@mixin imgAbsolute($top, $left, $delay, $zIndex: initial) {
   position: absolute;
   top: $top;
   left: $left;
   z-index: $zIndex;
+  animation-delay: $delay;
 }
 
 #home {
@@ -13,97 +15,134 @@
   font-size: 16px;
   height: 100vh;
   width: 100%;
-  padding: co.$margin-middle;
+  padding: 3%;
+  position: relative;
+
+  // Line
+  &::before {
+    @include co.absolute(3%, 3%);
+
+    content: "";
+    border: co.$border;
+    width: 94%;
+    height: 75%;
+
+    opacity: 0;
+    animation: AOpacity 2s co.$animation-opacity 2.5s forwards;
+  }
 }
 
-.home_wrap {
-  border: co.$border;
-  width: 100%;
-  height: 80%;
-}
-
+// Background circle images ans Text Line
 .home_bg {
   @include co.flexBox;
-  @include co.bgImg("full_line", 47% center, 50%);
 
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
   z-index: 100;
+  transform: scale(115%);
 
-  .alphabet {
-    width: 11%;
+  animation: AScale 0.7s ease-in-out 1.9s forwards;
+
+  // Background image
+  &::before {
+    @include co.absolute(0, 0, -1);
+    @include co.bgImg("full_line", 47% center, 50%);
+
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    animation: AOpacity 0.8s co.$animation-opacity 2.5s forwards;
   }
 
   // Long text image
-  &::before {
-    @include absolute(0, 0, -1);
+  &::after {
+    @include co.absolute(0, 0);
     @include co.bgImg("Long_text", center, 50%);
 
     content: "";
+    opacity: 0;
     width: 100%;
     height: 100%;
+    animation: ALongTextOpacity 0.8s co.$animation-opacity 2.5s infinite;
   }
+}
+
+.alphabet {
+  width: 11%;
+  opacity: 0;
+  animation: AbounceInTop 0.65s 0.3s forwards;
 }
 
 // Alphabet
 .alpha_p {
-  @include absolute(27%, 17%, 100);
+  @include imgAbsolute(27%, 17%, 0.3s, 100);
 }
+
 .alpha_o {
-  @include absolute(32%, 25%, 90);
+  @include imgAbsolute(32%, 25%, 0.85s, 90);
 }
 .alpha_r {
-  @include absolute(27%, 33%, 80);
+  @include imgAbsolute(27%, 33%, 0.88s, 80);
 }
 .alpha_t {
-  @include absolute(32%, 38.5%, 70);
+  @include imgAbsolute(32%, 38.5%, 0.93s, 70);
 }
 .alpha_f {
-  @include absolute(27%, 46%, 60);
+  @include imgAbsolute(27%, 46%, 0.97s, 60);
 }
 .alpha_o2 {
-  @include absolute(32%, 53%, 50);
+  @include imgAbsolute(32%, 53%, 1.1s, 50);
 }
 .alpha_l {
-  @include absolute(27%, 60%, 40);
+  @include imgAbsolute(27%, 60%, 1.2s, 40);
 }
 .alpha_i {
-  @include absolute(31%, 64%, 30);
+  @include imgAbsolute(31%, 64%, 1.3s, 30);
 }
 .alpha_o3 {
-  @include absolute(33%, 71%, 20);
+  @include imgAbsolute(33%, 71%, 1.4s, 20);
 }
 
 // bubbles
+.bubble {
+  width: 2.5%;
+  opacity: 0;
+  animation: AbounceTop 1s ease-in-out forwards;
+}
+
 // - left
 .b4 {
-  @include absolute(35%, 29%);
+  @include imgAbsolute(35%, 29%, 3.6s);
 }
 .b5 {
-  @include absolute(35%, 31.5%);
+  @include imgAbsolute(35%, 31.5%, 3.7s);
 }
 .b6 {
-  @include absolute(77%, 28%);
+  @include imgAbsolute(77%, 28%, 3.8s);
 }
 
 // - right
 .b1 {
-  @include absolute(27%, 75%);
+  @include imgAbsolute(27%, 75%, 3.8s);
 }
 .b3 {
-  @include absolute(33%, 78%);
+  @include imgAbsolute(33%, 78%, 3.9s);
 }
 .b2 {
-  @include absolute(73%, 70%);
+  @include imgAbsolute(73%, 70%, 3.95s);
 }
 
 .home_content {
-  padding-top: co.$margin-regular;
+  padding-top: co.$margin-middle;
 
   display: flex;
   width: 100%;
   height: 20%;
+  opacity: 0;
+
+  animation: AOpacity 1s co.$animation-opacity 2.4s forwards;
 }
 
 .home_occupation {
@@ -126,7 +165,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    font-size: 4em;
+    font-size: 3.7em;
     font-family: co.$font-eng-bold;
   }
 }

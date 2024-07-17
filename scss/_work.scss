@@ -1,4 +1,5 @@
 @use "common" as co;
+@use "animation";
 
 #work {
   @include co.section;
@@ -14,7 +15,14 @@
 
   height: 100%;
   width: 90%;
+  position: relative;
+  opacity: 0;
+
+  &.animation {
+    animation: AOpacityToTop co.$animation-opacity-card;
+  }
 }
+
 .work_btn {
   font-size: co.$font-large;
   margin: 0 co.$margin-regular;
@@ -36,13 +44,43 @@
   gap: co.$margin-middle;
   margin-top: co.$margin-middle;
   border-radius: co.$margin-small;
+  z-index: 100;
 
-  article {
+  .card_main {
     margin: auto;
     width: 65%;
-    img {
-      width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .click_btn {
+    width: 150px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    font-size: co.$font-middle;
+    font-family: co.$font-eng-light;
+    color: #5d9dd9;
+
+    animation: AClick 1.5s ease-in-out infinite both;
+  }
+  .card_img {
+    width: 100%;
+    transition: transform 3s ease, opacity 3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.4;
     }
+  }
+
+  // Animation
+  &.right-animation {
+    animation: ASlideInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  &.left-animation {
+    animation: ASlideInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 }
 
@@ -53,8 +91,9 @@
   h5 {
     font-size: co.$font-middle;
     margin-bottom: co.$margin-regular;
-    padding-bottom: co.$margin-micro;
+    padding-bottom: 5px;
     border-bottom: 2px co.$border-blue;
+    color: co.$color-blue;
   }
 }
 .card_list {
@@ -83,12 +122,14 @@
   border-bottom: 3px co.$border-blue;
   border-radius: 0.4em;
 
-  transition: border co.$transition-btn, background-color co.$transition-btn;
+  transition: border co.$transition-btn, background-color co.$transition-btn,
+    box-shadow co.$transition-btn;
 
   &:hover {
     border: 1px co.$border-blue;
-    border-left: 3px co.$border-blue;
-    border-top: 3px co.$border-blue;
+
+    -webkit-box-shadow: inset 1px 1px 0px 1px co.$color-blue;
+    box-shadow: inset 1px 1px 0px 1px co.$color-blue;
     background-color: co.$color-light-gray;
   }
 }
@@ -97,13 +138,34 @@
   margin-left: 30%;
   font-size: 1em;
   color: co.$color-dark-gray;
+  transition: color co.$transition;
+
+  &:hover {
+    color: co.$color-black;
+  }
 }
 
 .card_description {
   padding: co.$margin-regular;
+  padding-top: 0;
   border: 1px solid co.$color-light-gray;
   background-color: #eeeeee;
   border-radius: co.$border-radius-small;
   word-break: keep-all;
+  white-space: pre-line;
   margin-top: co.$margin-regular;
+}
+
+// Loading Icon
+.loading_icon {
+  @include co.absolute(50%, 50%, 1000);
+
+  animation: ARotate 2.6s linear both;
+  z-index: 1000;
+  opacity: 0;
+
+  i {
+    font-size: co.$font-large;
+    color: co.$color-blue;
+  }
 }

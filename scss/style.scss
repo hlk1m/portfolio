@@ -1,12 +1,13 @@
 @use "_reset";
 @use "_home";
 @use "_header";
-@use "_sentence";
+@use "_detail";
 @use "_about";
 @use "_work";
 @use "_contact";
 
 // Background color
 body {
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  overflow-x: hidden;
 }
