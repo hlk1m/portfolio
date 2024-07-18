@@ -1,6 +1,7 @@
 "use strict";
 import {
   onScrollToElement,
+  debounce,
   onWorkCardHover,
   makeWorkCardContent,
   makeDetailPage,
@@ -41,25 +42,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Scroll Event
-const home = document.querySelector("#home");
-const homeHeight = home.getBoundingClientRect().height;
-
 const goTopBtn = document.querySelector(".go_top_btn");
 const navbar = document.querySelector("#navbar");
 
-document.addEventListener("scroll", () => {
-  if (window.scrollY > homeHeight) {
+let lastScrollY = window.scrollY;
+
+function onScrollEvent() {
+  const home = document.querySelector("#home");
+  const homeHeight = home.getBoundingClientRect().top + window.scrollY;
+  const aboutHeight =
+    document //
+      .querySelector("#about")
+      .getBoundingClientRect().top + window.scrollY;
+  const workHeight =
+    document //
+      .querySelector("#work")
+      .getBoundingClientRect().top + window.scrollY;
+  const scroll = window.scrollY;
+
+  // 스크롤 방향 감지
+  const scrollDown = scrollY > lastScrollY;
+  lastScrollY = scrollY;
+
+  if (scrollDown && scroll > homeHeight / 2.5 && scroll < aboutHeight) {
     navbar.classList.add("animation");
-  } else if (window.scrollY > homeHeight / 2) {
-    navbar.classList.remove("animation");
     goTopBtn.classList.remove("hidden");
-  } else {
+
+    onScrollToElement("#about");
+  } else if (scrollDown && scroll > workHeight - 500 && scroll < workHeight) {
+    onScrollToElement("#work");
+  } else if (!scrollDown && scroll > homeHeight / 2.5) {
+    navbar.classList.remove("animation");
     goTopBtn.classList.add("hidden");
   }
 
   // control home opacity - slowly fade out
   home.style.opacity = 1 - window.scrollY / homeHeight;
-});
+}
+
+// Scroll event 성능 최적화
+const debouncedScroll = debounce(onScrollEvent, 200);
+
+document.addEventListener("scroll", debouncedScroll);
 
 // Navbar menu scroll event
 document.querySelector(".navbar_menu").addEventListener("click", (e) => {

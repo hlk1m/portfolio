@@ -5,6 +5,16 @@ function onScrollToElement(id) {
   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 }
 
+// 디바운싱을 사용하여 스크롤 이벤트 핸들러를 최적화
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
+
 // Main image hover event - Toggle Detail page
 let detailTimeout;
 function onWorkCardHover(isHover) {
@@ -126,6 +136,7 @@ function makeDetailPage(data) {
 
 export {
   onWorkCardHover,
+  debounce,
   onScrollToElement,
   makeWorkCardContent,
   makeDetailPage,
