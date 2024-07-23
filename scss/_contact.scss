@@ -25,12 +25,32 @@
   @include co.section;
   @include co.flexBox;
 
-  height: 15vh;
+  height: 170px;
   margin: 0;
-  padding: 0;
+  padding-bottom: co.$margin-large;
   background: linear-gradient(rgba(000, 000, 000, 000), #c3cfe2);
+
+  h1 {
+    margin-bottom: co.$margin-micro;
+  }
 
   &.animation {
     animation: AExpand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+}
+
+// Laptop
+@media screen and (max-width: co.$laptop) {
+  #contact {
+    div {
+      font-size: 16px;
+    }
+  }
+}
+
+// tablet
+@media screen and (max-width: co.$tablet) {
+  #contact {
+    margin-bottom: 0;
   }
 }

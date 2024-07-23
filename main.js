@@ -101,6 +101,12 @@ document
 // Go to top button
 goTopBtn.addEventListener("click", () => onScrollToElement("#home"));
 
+// Navbar Toggle button
+const menu = document.querySelector(".navbar_menu");
+document
+  .querySelector(".navbar_menu_btn")
+  .addEventListener("click", () => menu.classList.toggle("nav_hidden"));
+
 // Work card Buttons
 let num = 0;
 

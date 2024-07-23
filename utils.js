@@ -3,6 +3,12 @@
 // Scroll to section
 function onScrollToElement(id) {
   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+
+  // Mobile toggle menu
+  const menu = document.querySelector(".navbar_menu");
+  if (!menu.classList.contains("nav_hidden")) {
+    menu.classList.add("nav_hidden");
+  }
 }
 
 // 디바운싱을 사용하여 스크롤 이벤트 핸들러를 최적화

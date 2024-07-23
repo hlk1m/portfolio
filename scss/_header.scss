@@ -3,8 +3,11 @@
 
 #navbar {
   @include co.flexBox(space-between, row);
-  // @include co.boxShadow;
+  -webkit-box-shadow: 0px 2px 12px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 2px 12px 2px rgba(0, 0, 0, 0.03);
+
   height: 6vh;
+  min-height: 65px;
   padding: 0 5%;
   width: 100%;
   background-color: co.$color-white;
@@ -17,8 +20,12 @@
   opacity: 0;
 
   &.animation {
-    animation: AOpacity 2s ease-in-out forwards;
+    animation: AOpacity 1s ease-in-out forwards;
   }
+}
+
+.navbar_menu_btn {
+  display: none;
 }
 
 .navbar_logo {
@@ -41,4 +48,56 @@
   &:hover {
     color: co.$color-gray;
   }
+}
+
+// Laptop
+@media screen and (max-width: co.$laptop) {
+  #navbar {
+    height: 5vh;
+  }
+}
+
+// Tablet
+@media screen and (max-width: co.$tablet) {
+  #navbar {
+    height: 50px;
+    font-size: 16px;
+    min-height: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: AOpacity 1s ease-in-out 4s forwards;
+
+    &.animaion {
+      animation: none;
+    }
+  }
+  .navbar_menu_btn {
+    display: initial;
+    font-size: co.$font-middle;
+  }
+
+  .navbar_menu {
+    @include co.absolute(50px, 0);
+    @include co.boxShadow;
+
+    flex-direction: column;
+    background-color: co.$color-white;
+    width: 100%;
+    padding: co.$margin-middle 0;
+
+    &.nav_hidden {
+      opacity: 0;
+      display: hidden;
+    }
+  }
+  .navbar_menu_item {
+    font-size: 20px;
+    margin-bottom: co.$margin-small;
+  }
+}
+
+// Mobile
+@media screen and (max-width: co.$mobile) {
 }

@@ -49,7 +49,7 @@ $transition: 0.3s ease;
 $transition-btn: 0.15s linear;
 
 // Screen Size
-$laptop: 1512px;
+$laptop: 1920px;
 $tablet: 1024px;
 $tablet-s: 768px;
 $mobile: 430px;
@@ -95,6 +95,35 @@ $mobile: 430px;
     font-family: $font-eng-bold;
     font-size: $font-large;
     color: $color-blue;
+  }
+
+  // Laptop
+  @media screen and (max-width: $laptop) {
+    padding: 7vh 3%;
+    font-size: 14px;
+
+    h1 {
+      font-size: 2.3em;
+    }
+  }
+
+  // Tablet
+  @media screen and (max-width: $tablet) {
+    padding: 0;
+    margin-bottom: 3em;
+
+    h1 {
+      font-size: 2.1em;
+    }
+  }
+
+  // Moblie
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 3em;
+
+    h1 {
+      font-size: 2.1em;
+    }
   }
 }
 

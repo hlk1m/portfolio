@@ -64,11 +64,12 @@
 
     animation: AClick 1.5s ease-in-out infinite both;
   }
+
   .card_img {
     width: 100%;
     transition: transform 3s ease, opacity 3s ease;
 
-    &:hover {
+    &.hover:hover {
       transform: scale(1.2);
       opacity: 0.4;
     }
@@ -167,5 +168,99 @@
   i {
     font-size: co.$font-large;
     color: co.$color-blue;
+  }
+}
+
+// Laptop
+@media screen and (max-width: co.$laptop) {
+  .work_container {
+    width: 100%;
+  }
+}
+
+// Tablet
+@media screen and (max-width: co.$tablet) {
+  #work {
+    height: 550px;
+  }
+
+  .work_card {
+    overflow: hidden;
+    .card_main {
+      width: 70%;
+      scale: 1.2;
+    }
+  }
+
+  .card_content {
+    margin: auto;
+    margin-right: co.$margin-large;
+    width: 45%;
+    z-index: 100;
+  }
+
+  .card_more {
+    display: none;
+  }
+}
+// Tablet -small
+@media screen and (max-width: co.$tablet-s) {
+  #work {
+    height: auto;
+  }
+  .work_card {
+    height: 600px;
+    gap: 0;
+    flex-direction: column;
+  }
+  .card_main {
+    width: 100%;
+    padding-top: co.$margin-regular;
+  }
+  .click_btn {
+    scale: 0.7;
+    width: 100px;
+  }
+  .work_btn {
+    margin: 0 co.$margin-small;
+  }
+
+  .card_content {
+    margin: auto;
+    width: 85%;
+    h5 {
+      font-size: 20px;
+    }
+  }
+  .card_list {
+    @include co.flexBox($align: initial);
+    margin-left: co.$margin-micro;
+  }
+
+  .card_links {
+    margin-left: 0;
+  }
+}
+
+// Mobile
+@media screen and (max-width: co.$mobile) {
+  #work {
+    height: auto;
+  }
+  .work_container {
+    height: 450px;
+  }
+  .work_card {
+    flex-direction: column;
+  }
+
+  .card_main {
+    width: 100%;
+  }
+
+  .card_content {
+    margin: auto;
+    width: 90%;
+    z-index: 100;
   }
 }

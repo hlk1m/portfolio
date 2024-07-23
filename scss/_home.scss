@@ -30,6 +30,10 @@
     opacity: 0;
     animation: AOpacity 2s co.$animation-opacity 2.5s forwards;
   }
+
+  &.out_animation {
+    animation: AOutScale 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
 }
 
 // Background circle images ans Text Line
@@ -114,24 +118,24 @@
 
 // - left
 .b4 {
-  @include imgAbsolute(35%, 29%, 3.6s);
+  @include imgAbsolute(35%, 29%, 3.1s);
 }
 .b5 {
-  @include imgAbsolute(35%, 31.5%, 3.7s);
+  @include imgAbsolute(35%, 31.5%, 3.2s);
 }
 .b6 {
-  @include imgAbsolute(77%, 28%, 3.8s);
+  @include imgAbsolute(77%, 28%, 3.3s);
 }
 
 // - right
 .b1 {
-  @include imgAbsolute(27%, 75%, 3.8s);
+  @include imgAbsolute(27%, 75%, 3.3s);
 }
 .b3 {
-  @include imgAbsolute(33%, 78%, 3.9s);
+  @include imgAbsolute(33%, 78%, 3.4s);
 }
 .b2 {
-  @include imgAbsolute(73%, 70%, 3.95s);
+  @include imgAbsolute(73%, 70%, 3.5s);
 }
 
 .home_content {
@@ -149,6 +153,7 @@
   width: auto;
   font-size: 3.7em;
   font-family: co.$font-eng-bold;
+  color: #282828;
 
   small {
     font-family: co.$font-eng-light;
@@ -162,6 +167,7 @@
   position: relative;
 
   span {
+    color: #282828;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -170,6 +176,42 @@
   }
 }
 
-// Laptop
-@media screen and (max-width: co.$laptop) {
+// Tablet
+@media screen and (max-width: co.$tablet) {
+  #home {
+    height: 600px;
+  }
+  .home_occupation {
+    font-size: 2.7em;
+  }
+  .home_line {
+    span {
+      font-size: 2.7em;
+    }
+  }
+}
+
+// Tablet -small
+@media screen and (max-width: co.$tablet-s) {
+  #home {
+    height: 420px;
+  }
+  .home_content {
+    padding-top: co.$margin-small;
+  }
+  .home_occupation {
+    font-size: 1.7em;
+  }
+  .home_line {
+    span {
+      font-size: 1.7em;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: co.$mobile) {
+  #home {
+    height: 320px;
+  }
 }
