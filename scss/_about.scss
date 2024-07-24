@@ -5,7 +5,7 @@
   @include co.section;
   @include co.flexBox;
 
-  margin-top: 300px;
+  margin-top: co.$margin-xlarge;
   height: auto;
   min-height: 100vh;
 }
@@ -214,11 +214,12 @@
       font-size: 28px;
     }
   }
-  .about_description {
-    font-size: 14px;
-    width: 85%;
+  .about_sentence {
+    .about_description {
+      font-size: 16px;
+      width: 80%;
+    }
   }
-
   .info_container {
     width: 85%;
     gap: co.$margin-regular;
@@ -240,16 +241,29 @@
 
 // Mobile
 @media screen and (max-width: co.$mobile) {
-  .info_title {
-    width: 70%;
-    font-size: 1em;
-
-    &::before {
-      font-size: 1em;
+  #about {
+    margin-top: co.$margin-regular;
+    h1 {
+      margin-top: 70px;
     }
   }
+
+  .about_sentence {
+    .info_title {
+      font-size: 24px;
+      white-space: wrap;
+      word-break: keep-all;
+      color: black;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   .info_container {
     @include co.flexBox;
+    font-size: 16px;
   }
   .info_skill {
     @include co.grid(repeat(4, 1fr));

@@ -11,16 +11,6 @@ function onScrollToElement(id) {
   }
 }
 
-// 디바운싱을 사용하여 스크롤 이벤트 핸들러를 최적화
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
-    const context = this;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(context, args), wait);
-  };
-}
-
 // Main image hover event - Toggle Detail page
 let detailTimeout;
 function onWorkCardHover(isHover) {
@@ -127,11 +117,11 @@ function makeDetailPage(data) {
           </li>
         </ul>
         <div class="detail_description">
-          <h2 class="detail_title">Description</h2>
+          <h2 class="detail_subtitle">Description</h2>
           <p>${data.description}</p>
         </div>
         <figure class="detail_img">
-          <h2 class="detail_title">details</h2>
+          <h2 class="detail_subtitle">details</h2>
           ${imageArray.map(
             (_, index) =>
               `<img src="assets/works/${data.type}_${index + 1}.jpg" />`
@@ -142,7 +132,6 @@ function makeDetailPage(data) {
 
 export {
   onWorkCardHover,
-  debounce,
   onScrollToElement,
   makeWorkCardContent,
   makeDetailPage,

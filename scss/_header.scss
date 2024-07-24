@@ -67,7 +67,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-    animation: AOpacity 1s ease-in-out 4s forwards;
+    animation: AOpacity 1s ease-in-out 2.5s forwards;
 
     &.animaion {
       animation: none;
@@ -88,16 +88,11 @@
     padding: co.$margin-middle 0;
 
     &.nav_hidden {
-      opacity: 0;
-      display: hidden;
+      display: none;
     }
   }
   .navbar_menu_item {
     font-size: 20px;
     margin-bottom: co.$margin-small;
   }
-}
-
-// Mobile
-@media screen and (max-width: co.$mobile) {
 }

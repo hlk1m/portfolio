@@ -180,6 +180,11 @@
 @media screen and (max-width: co.$tablet) {
   #home {
     height: 600px;
+    padding-top: 50px;
+    &::before {
+      top: 65px;
+      height: 60%;
+    }
   }
   .home_occupation {
     font-size: 2.7em;
@@ -212,6 +217,18 @@
 // Mobile
 @media screen and (max-width: co.$mobile) {
   #home {
-    height: 320px;
+    height: 300px;
+  }
+  .home_bg {
+    transform: scale(120%);
+  }
+
+  .home_occupation {
+    font-size: 18px;
+  }
+  .home_line {
+    span {
+      font-size: 18px;
+    }
   }
 }

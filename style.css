@@ -583,6 +583,11 @@ ol {
 @media screen and (max-width: 1024px) {
   #home {
     height: 600px;
+    padding-top: 50px;
+  }
+  #home::before {
+    top: 65px;
+    height: 60%;
   }
   .home_occupation {
     font-size: 2.7em;
@@ -607,7 +612,16 @@ ol {
 }
 @media screen and (max-width: 430px) {
   #home {
-    height: 320px;
+    height: 300px;
+  }
+  .home_bg {
+    transform: scale(120%);
+  }
+  .home_occupation {
+    font-size: 18px;
+  }
+  .home_line span {
+    font-size: 18px;
   }
 }
 #navbar {
@@ -672,7 +686,7 @@ ol {
     top: 0;
     left: 0;
     opacity: 0;
-    animation: AOpacity 1s ease-in-out 4s forwards;
+    animation: AOpacity 1s ease-in-out 2.5s forwards;
   }
   #navbar.animaion {
     animation: none;
@@ -694,8 +708,7 @@ ol {
     padding: 2em 0;
   }
   .navbar_menu.nav_hidden {
-    opacity: 0;
-    display: hidden;
+    display: none;
   }
   .navbar_menu_item {
     font-size: 20px;
@@ -720,8 +733,9 @@ ol {
   width: 100%;
   margin: auto;
 }
-
-.detail_title {
+.detail .detail_title,
+.detail .detail_subtitle {
+  font-size: 1.5em;
   padding-bottom: 3px;
   color: #006fc4;
   font-family: "MoveSans-Bold";
@@ -779,6 +793,47 @@ ol {
   margin-bottom: 1.2em;
 }
 
+@media screen and (max-width: 1024px) {
+  .detail_subtitle {
+    font-size: 18px;
+  }
+  .detail_list {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .detail {
+    height: 100vh;
+    padding-top: 40px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .detail_content {
+    font-size: 16px;
+    padding: 5%;
+  }
+  .detail_list {
+    padding: 0;
+  }
+  .detail_list span {
+    width: 80px;
+    margin-right: 0.7em;
+  }
+  .detail_list p {
+    height: auto;
+  }
+  .detail_list:last-child {
+    display: flex;
+  }
+  .detail_description {
+    font-size: 16px;
+    margin: 2em 0;
+  }
+  .detail_description p {
+    padding: 0 0.7em;
+  }
+}
 #about {
   font-size: 16px;
   width: 100%;
@@ -789,7 +844,7 @@ ol {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 300px;
+  margin-top: 4em;
   height: auto;
   min-height: 100vh;
 }
@@ -1019,9 +1074,9 @@ ol {
   .info_title::before {
     font-size: 28px;
   }
-  .about_description {
-    font-size: 14px;
-    width: 85%;
+  .about_sentence .about_description {
+    font-size: 16px;
+    width: 80%;
   }
   .info_container {
     width: 85%;
@@ -1041,18 +1096,27 @@ ol {
   }
 }
 @media screen and (max-width: 430px) {
-  .info_title {
-    width: 70%;
-    font-size: 1em;
+  #about {
+    margin-top: 1.2em;
   }
-  .info_title::before {
-    font-size: 1em;
+  #about h1 {
+    margin-top: 70px;
+  }
+  .about_sentence .info_title {
+    font-size: 24px;
+    white-space: wrap;
+    word-break: keep-all;
+    color: black;
+  }
+  .about_sentence .info_title::before {
+    display: none;
   }
   .info_container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    font-size: 16px;
   }
   .info_skill {
     display: grid;
@@ -1291,13 +1355,14 @@ ol {
     gap: 0;
     flex-direction: column;
   }
-  .card_main {
-    width: 100%;
+  .work_card .card_main {
+    width: 85%;
     padding-top: 1.2em;
   }
-  .click_btn {
-    scale: 0.7;
+  .work_card .card_main .click_btn {
+    font-size: 16px;
     width: 100px;
+    display: none;
   }
   .work_btn {
     margin: 0 0.7em;
@@ -1325,18 +1390,44 @@ ol {
     height: auto;
   }
   .work_container {
-    height: 450px;
+    justify-content: initial;
+  }
+  .work_btn {
+    position: absolute;
+    top: 40%;
+    left: 0.4em;
+    z-index: 1000;
+  }
+  .work_btn i {
+    font-size: 28px;
+  }
+  .right_btn {
+    left: auto;
+    right: 0.4em;
   }
   .work_card {
     flex-direction: column;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 90%;
+    height: auto;
   }
-  .card_main {
-    width: 100%;
+  .work_card .card_main {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+  .work_card .card_main .click_btn {
+    font-size: 16px;
+  }
+  .work_card .card_img {
+    margin-bottom: 2em;
   }
   .card_content {
-    margin: auto;
+    margin: 0 auto;
     width: 90%;
     z-index: 100;
+    margin-bottom: 2em;
   }
 }
 .go_top_btn {
