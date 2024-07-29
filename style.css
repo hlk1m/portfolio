@@ -344,10 +344,10 @@ ol {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url("/assets/images/background.png");
   background-position: initial;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("/assets/images/background.png");
   font-size: 16px;
   height: 100vh;
   width: 100%;
@@ -387,10 +387,10 @@ ol {
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url("/assets/images/full_line.png");
   background-position: 47% center;
   background-repeat: no-repeat;
   background-size: 50%;
+  background-image: url("/assets/images/full_line.png");
   content: "";
   opacity: 0;
   width: 100%;
@@ -402,10 +402,10 @@ ol {
   top: 0;
   left: 0;
   z-index: initial;
-  background-image: url("/assets/images/Long_text.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
+  background-image: url("/assets/images/Long_text.png");
   content: "";
   opacity: 0;
   width: 100%;

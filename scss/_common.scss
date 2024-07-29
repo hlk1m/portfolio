@@ -139,8 +139,8 @@ $mobile: 430px;
   align-items: $align;
 }
 
-@mixin bgImg($url, $position: initial, $size: cover) {
-  background-image: url("/assets/images/" + $url + ".png");
+@mixin bgImg($position: initial, $size: cover) {
+  // background-image: url("/assets/images/" + $url + ".png");
   background-position: $position;
   background-repeat: no-repeat;
   background-size: $size;

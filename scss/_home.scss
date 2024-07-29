@@ -11,7 +11,9 @@
 
 #home {
   @include co.flexBox;
-  @include co.bgImg("background");
+  @include co.bgImg;
+
+  background-image: url("./assets/images/background.png");
   font-size: 16px;
   height: 100vh;
   width: 100%;
@@ -51,8 +53,9 @@
   // Background image
   &::before {
     @include co.absolute(0, 0, -1);
-    @include co.bgImg("full_line", 47% center, 50%);
+    @include co.bgImg(47% center, 50%);
 
+    background-image: url("./assets/images/full_line.png");
     content: "";
     opacity: 0;
     width: 100%;
@@ -63,8 +66,9 @@
   // Long text image
   &::after {
     @include co.absolute(0, 0);
-    @include co.bgImg("Long_text", center, 50%);
+    @include co.bgImg(center, 50%);
 
+    background-image: url("./assets/images/Long_text.png");
     content: "";
     opacity: 0;
     width: 100%;

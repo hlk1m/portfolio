@@ -52,7 +52,7 @@ document.addEventListener("scroll", () => {
       .querySelector("#about")
       .getBoundingClientRect().top + window.scrollY;
 
-  if (aboutHeight < window.scrollY) {
+  if (aboutHeight * 0.9 < window.scrollY) {
     navbar.classList.add("animation");
     goTopBtn.classList.remove("hidden");
   } else {
