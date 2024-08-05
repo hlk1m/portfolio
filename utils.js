@@ -122,10 +122,12 @@ function makeDetailPage(data) {
         </div>
         <figure class="detail_img">
           <h2 class="detail_subtitle">details</h2>
-          ${imageArray.map(
-            (_, index) =>
-              `<img src="assets/works/${data.type}_${index + 1}.jpg" />`
-          )}
+          ${imageArray
+            .map(
+              (_, index) =>
+                `<img src="assets/works/${data.type}_${index + 1}.jpg" />`
+            )
+            .join("")}
         </figure>
   `;
 }

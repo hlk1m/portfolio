@@ -180,6 +180,19 @@
   }
 }
 
+// Laptop
+@media screen and (max-width: co.$laptop) {
+  .home_occupation {
+    font-size: 3.4em;
+    line-height: 1.3;
+  }
+  .home_line {
+    span {
+      font-size: 3.4em;
+    }
+  }
+}
+
 // Tablet
 @media screen and (max-width: co.$tablet) {
   #home {
